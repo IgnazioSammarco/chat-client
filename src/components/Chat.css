@@ -1,0 +1,17 @@
+.chatbox {
+  /* width: 60%;
+  margin: auto; */
+}
+
+.message-text {
+  background: #478dee;
+  margin: 20px 0;
+  padding: 20px 40px;
+  border-radius: 8px;
+  font-weight: 300;
+}
+
+.messages {
+  overflow-y: scroll;
+  height: 300px;
+}

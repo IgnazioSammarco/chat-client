@@ -1,12 +1,21 @@
 import { Component } from 'react/cjs/react.development';
 import { w3cwebsocket as W3CWebSocket } from "websocket";
+import { useRef, useEffect  } from 'react';
+import './Chat.css';
 
-const client = new W3CWebSocket('ws://localhost:8080/chat');
+// const client = new W3CWebSocket('ws://localhost:8080/chat');
+const client = new W3CWebSocket('wss://chat-server-spring.herokuapp.com/chat');
 
 const dummy_messages = [
   // {id:"1", text:"Prova messaggio"},
   // {id:"2", text:"Messaggio 2"}
 ];
+
+const AlwaysScrollToBottom = () => {
+  const elementRef = useRef();
+  useEffect(() => elementRef.current.scrollIntoView());
+  return <div ref={elementRef} />;
+};
 
 class Chat extends Component{
 
@@ -22,10 +31,6 @@ class Chat extends Component{
     });
   }
 
-  // sendMessage = function(){
-  //   client.send("Messaggio statico");
-  // }  
-
   // // Manda il messaggio preso dal DOM - NON USARE
   // sendMessage = () => {
   //   const message = document.getElementById('message').value
@@ -37,16 +42,17 @@ class Chat extends Component{
     client.send(this.state.message);
     this.setState({
       message: ''
-    })
+    });
   }
 
-  componentWillMount() {
+  componentDidMount() {
     client.onopen = () => {
       console.log('WebSocket Client Connected');
     };
     client.onmessage = (message) => {
+      let id = this.state.messages.length;
       this.setState({
-        messages: [...this.state.messages, {id:3,text: message.data}]
+        messages: [...this.state.messages, {id:id,text: message.data}]
       })
     };
     client.onclose = () => {
@@ -58,17 +64,24 @@ class Chat extends Component{
     return (
       <div>
         <h2>Chat realizzata con React e WebSockets</h2>
-        {/* <input id="message"></input> */}
-        <input onChange={ this.handleChange.bind(this) }></input>
-        <button onClick={() => this.sendMessage() }>Send Message</button>
-        <div className="messages">
-          {this.state.messages.map(message => {
-              return (
-               <li key={message.id}>
-                   {message.text}
-               </li>
-             )
-           })}
+        <div className="chatbox">
+          <div id="messages" className="messages">
+            {this.state.messages.map(message => {
+                return (
+                <div className="message-text" key={message.id}>
+                    {message.text}
+                </div>
+              )
+            })}
+            <AlwaysScrollToBottom />
+          </div>
+          <div className="message-input">  
+            <input 
+              value={this.state.message || ''}
+              onChange={ this.handleChange.bind(this) }>
+            </input>
+            <button onClick={() => this.sendMessage() }>Send Message</button>
+          </div>  
         </div>
       </div>
     );
