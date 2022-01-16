@@ -1,12 +1,15 @@
 import React from 'react'
 
 function Product(props) {
+	const {product, onAdd} = props;
 	return (
-		<div key={props.product.id}>
-			<img className="small" src={props.product.image}></img>
-			<h3>{props.product.name}</h3>
-			<p>Prezzo: {props.product.price}</p>
-			<button className='button-32'>Aggiungi al carrello</button>
+		<div>
+			<img className="small" src={product.image}></img>
+			<h3>{product.name}</h3>
+			<p>Prezzo: {product.price}</p>
+			<p>Origine: {product.origin}</p>
+			<button className='button-32' onClick={onAdd(product)}>
+				Aggiungi al carrello</button>
 		</div>
 	)
 }

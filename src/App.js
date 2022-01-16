@@ -9,28 +9,33 @@ import TodoList from './components/TodoList';
 import Header from './components/Header';
 import Main from './components/Main';
 import Basket from './components/Basket';
-import data from "./service/data";
+import data from "./services/data";
 
 function App() {
   
   const {products} = data; 
   const [cartItems,setCartItems] = useState([]);
-
+  
+  const onAdd = (product) =>{
+    console.log(product);
+		// setCartItems([...cartItems,{...product}]);
+	} 
+	
   return (
     <div className="App">
       <div className="">
-        <Chat/>
+        {/* <Chat/> */}
         {/* <Card/> */}
         {/* <ClockClass/>  */}
         {/* <ClockFunc/>  */}
         {/* <Form/> */}
         {/* <TodoList/> */}
 
-        {/* <Header/>
+        <Header/>
         <div className='row'>
-          <Main products={products}/>
-          <Basket cartItems={cartItems}/>
-        </div> */}
+          <Main onAdd={onAdd} products={products}/>
+          <Basket onAdd={onAdd} cartItems={cartItems} />
+        </div>
 
       </div>
     </div>
