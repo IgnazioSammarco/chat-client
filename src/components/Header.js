@@ -6,7 +6,7 @@ function Header(props){
 		<header className="wrapper block center">
 			<h2>Shopping cart</h2>	
 			<div>
-				<a href="#/cart">Cart</a>
+				<a href="#/cart">Carrello</a>
 				<a href="#/signin">Sign in</a>
 			</div>
 		</header>

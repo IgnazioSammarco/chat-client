@@ -73,6 +73,7 @@ img.small {
   background-color: rgb(255, 255, 255);
   padding: 1.1rem;
   text-align: center;
+  flex-basis: 25%;
 }
 .product_name {
   color: rgb(19, 18, 18);
