@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import "./Form.css";
+import cssform from "./Form.module.css";
 
 function Form() {
 	const [name, setName] = useState("Ignazio");
@@ -14,7 +14,7 @@ function Form() {
 
 	return (
 
-		<div className='wrapper'>
+		<div className={cssform.wrapper}>
 			<div className="label"><span>Nome</span></div>
 			<input 
 				value={name}

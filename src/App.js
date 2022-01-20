@@ -49,7 +49,7 @@ function App() {
       {/* <TodoList/> */}
 
       <Header countCartItems={cartItems.length}></Header>
-      <div className="row">
+      <div className="wrapper">
         <Main 
           products={products} 
           onAdd={onAdd}>

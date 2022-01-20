@@ -1,8 +1,4 @@
-.App {
-  text-align: center;
-}
-
-.row {
+.wrapper {
   display: flex;
   justify-content: space-between;
 }
@@ -13,6 +9,10 @@
 
 .col-2 {
   flex: 2;
+}
+
+.col-3 {
+  flex: 3;
 }
 
 .block {
@@ -68,3 +68,19 @@ img.small {
   cursor: not-allowed;
 }
 /* CSS */
+
+.product_card {
+  background-color: rgb(255, 255, 255);
+  padding: 1.1rem;
+  text-align: center;
+}
+.product_name {
+  color: rgb(19, 18, 18);
+  font-size: 1.2rem;
+}
+.product_price {
+  color: rgb(219, 49, 49);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
