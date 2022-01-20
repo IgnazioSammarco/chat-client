@@ -50,12 +50,15 @@ function App() {
 
       <Header countCartItems={cartItems.length}></Header>
       <div className="row">
-        <Main products={products} onAdd={onAdd}></Main>
+        <Main 
+          products={products} 
+          onAdd={onAdd}>
+        </Main>
         <Basket
           cartItems={cartItems}
           onAdd={onAdd}
-          onRemove={onRemove}
-        ></Basket>
+          onRemove={onRemove}>
+        </Basket>
       </div>
     </div>
   );
