@@ -30,10 +30,10 @@ const data = {
 		},
 		{
 			id: 5,
-			name: "Lattuga",
-			price: 2.0,
+			name: "Zucchine genovesi",
+			price: 3.0,
 			origin: "Italia",
-			image: "https://ortourbano.altervista.org/images/lattuga_small.jpeg"
+			image: "https://ortourbano.altervista.org/images/zucc_gen_small.jpeg"
 		},
 		{
 			id: 6,
