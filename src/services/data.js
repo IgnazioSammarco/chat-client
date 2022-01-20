@@ -20,7 +20,29 @@ const data = {
 			price: 2.0,
 			origin: "Italia",
 			image: "https://ortourbano.altervista.org/images/lattuga_small.jpeg"
+		},
+		{
+			id: 4,
+			name: "Lattuga",
+			price: 2.0,
+			origin: "Italia",
+			image: "https://ortourbano.altervista.org/images/lattuga_small.jpeg"
+		},
+		{
+			id: 5,
+			name: "Lattuga",
+			price: 2.0,
+			origin: "Italia",
+			image: "https://ortourbano.altervista.org/images/lattuga_small.jpeg"
+		},
+		{
+			id: 6,
+			name: "Lattuga",
+			price: 2.0,
+			origin: "Italia",
+			image: "https://ortourbano.altervista.org/images/lattuga_small.jpeg"
 		}
+
 	]
 }
 
